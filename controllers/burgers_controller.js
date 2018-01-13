@@ -26,22 +26,11 @@ router.post("/burgers", function(req, res) {
   });
 });
 
-router.put("/burgers/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  burgers.update({
-    devoured: true
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
+router.put('/burgers/update/devour/:id', function(req, res) {
+  burgers.update('burgers','devoured', req.params.id, function() {
+      res.redirect('/burgers');
+  })
+})
 
 
 module.exports = router;

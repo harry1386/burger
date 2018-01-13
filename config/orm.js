@@ -65,6 +65,16 @@ var orm = {
     });
   },
 
+  /*update: function(table, col_name, burger_id, cb) {
+    var queryString = "UPDATE " + table + " SET " + col_name + "=1 " + "WHERE id=" + burger_id;
+    console.log(queryString);
+
+  connection.query(queryString, function(err, result) {
+    if (err) throw err;
+    cb(result);
+  })
+},*/
+
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
