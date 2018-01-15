@@ -10,7 +10,6 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -26,11 +25,17 @@ router.post("/burgers", function(req, res) {
   });
 });
 
+//so I have continued working on this, and tried to make a Jquery function but that would require an entire rebuild.
+//what I am frustrated/ curious about is how this code works on others machines, but for some reason not mine. 
+//I am at a loss, but I am pushing to heroku and turning it in.  If you have time later we can talk about it.
+
 router.put('/burgers/update/devour/:id', function(req, res) {
+  console.log("I'm hit");
   burgers.update('burgers','devoured', req.params.id, function() {
-      res.redirect('/burgers');
+      res.redirect('/');
   })
 })
+
 
 
 module.exports = router;

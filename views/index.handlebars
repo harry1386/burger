@@ -15,8 +15,8 @@
                   <button type="button" class="btn btn-success" disabled>{{this.burger_name}}</button>
                 </div>
                 <div class="col-sm-3">
-                  <form action="burgers/update/devour/{{this.id}}?_method=PUT" method="POST">
-                    <button type="submit" class="btn btn-outline-danger">Devour it!</button>
+                  <form action="burgers/update/devour/{{this.id}}?_method=PUT" method="PUT">
+                    <button type="submit" class="btn btn-outline-danger" id="devour">Devour it!</button>
                   </form>
                 </div>            
             </div>
